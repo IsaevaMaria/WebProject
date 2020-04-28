@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row" style="margin-top:20px;">
+            <div class="card-deck">
+            {% for item in range(2) %}
+             <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="/static/image/image1.jfif" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">Маршруты</h5>
+                    <!--<p class="card-text">Прогулки по улицам Костромы</p>
+                    <a href="#" class="btn btn-primary">Гулять!</a>-->
+                    </div>
+            </div>
+        {% endfor %}
+{% endblock %}
