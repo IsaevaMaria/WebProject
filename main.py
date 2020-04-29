@@ -8,11 +8,11 @@ app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 def main():
     db_session.global_init("db/my_city.sqlite")
-    #app.run(port=8000, host='127.0.0.1')
-    session = db_session.create_session()
+    app.run(port=8000, host='127.0.0.1')
+    #session = db_session.create_session()
     #user = session.query(Categories).first()
-    for user in session.query(Building).filter(Building.categories_id == 1):
-        print(user.title)
+    #for user in session.query(Building).filter(Building.categories_id == 1):
+     #   print(user.title)
 
 
 
@@ -25,7 +25,10 @@ def index():
 @app.route('/attractions')
 def attractions():
     session = db_session.create_session()
-    return render_template('attractions.html', title='Достопримечательности Костромы')
+    b = session.query(Building).filter(Building.categories_id == 1)
+    print(b)
+
+    return render_template('attractions.html', title='Достопримечательности Костромы', items=b)
 
 
 
