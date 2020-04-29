@@ -4,10 +4,10 @@ from .db_session import SqlAlchemyBase
 
 
 class Categories(SqlAlchemyBase):
-    __tablename__ = 'categoria'
+    __tablename__ = 'categories'
 
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
     name = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     about = sqlalchemy.Column(sqlalchemy.String, nullable=True)
-    building = orm.relation("Building", back_populates='categor')
+    building = orm.relation("Building", back_populates='categories')

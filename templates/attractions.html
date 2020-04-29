@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+{{ form.hidden_tag() }}
+    {{ form.csrf_token }}
     <div class="container-fluid">
         <div class="row" style="margin-top:20px;">
             <div class="card-deck">
