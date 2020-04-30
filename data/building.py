@@ -16,4 +16,7 @@ class Building(SqlAlchemyBase):
     image = sqlalchemy.Column(sqlalchemy.String, nullable=True)
     categories_id = sqlalchemy.Column(sqlalchemy.Integer,
                                 sqlalchemy.ForeignKey("categories.id"))
+    routes_id = sqlalchemy.Column(sqlalchemy.Integer,
+                                      sqlalchemy.ForeignKey("routes.id"))
     categories = orm.relation('Categories')
+    routes = orm.relation('Routes')

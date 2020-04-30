@@ -2,14 +2,14 @@
 {% block content %}
     <div class="container-fluid">
         <div class="row" style="margin-top:20px;">
-            <div class="card-deck">
+            <div class="card-columns">
             {% for item in items %}
              <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src={{item.image}} alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">{{item.title}}</h5>
-                    <!--<p class="card-text">Прогулки по улицам Костромы</p>
-                    <a href="#" class="btn btn-primary">Гулять!</a>-->
+                    <p class="card-text">{{item.adress}}</p>
+                    <!--<a href="#" class="btn btn-primary">Гулять!</a>-->
                     </div>
             </div>
         {% endfor %}

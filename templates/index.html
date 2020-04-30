@@ -1,37 +1,69 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="container-fluid glass">
-        <div class="row" style="margin-top:20px;">
-            <div class="card-deck">
 
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Заголовок модального окна -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Заголовок модального окна</h4>
+      </div>
+      <!-- Основное содержимое модального окна -->
+      <div class="modal-body">
+        Содержимое модального окна...
+      </div>
+      <!-- Футер модального окна -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container-fluid">
+        <div class="row" style="margin-top:50px; margin-left:50px;">
+            <div class="card-deck">
              <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="/static/image/image1.jfif" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">Маршруты</h5>
                     <p class="card-text">Прогулки по улицам Костромы</p>
-                    <a href="#" class="btn btn-primary">Гулять!</a>
-                    </div>
-            </div>
 
-        <div class="card" style="width: 18rem;">
+                    </div>
+                 <div class="card-footer text-muted">
+                        <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#myModal">Гулять!</a>
+                </div>
+            </div>
+             <div class="card" style="width: 18rem;">
                     <img class="card-img-top class" src="/static/image/image2.jfif" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">Музеи</h5>
                     <p class="card-text">Кострома - музейная столица</p>
-                    <a href="#" class="btn btn-primary">Смотреть!</a>
+
                     </div>
+
+                <div class="card-footer text-muted">
+                        <a href="#" class="btn btn-primary">Смотреть!</a>
                 </div>
-            <div class="card" style="width: 18rem;">
+             </div>
+             <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="/static/image/image3.jfif" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">Достопримечательности</h5>
                     <p class="card-text">Кострома - исторический город</p>
-                    <a href="/attractions" class="btn btn-primary">Узнать!</a>
-                    </div>
+                                        </div>
+                 <div class="card-footer text-muted">
+                        <a href="/attractions" class="btn btn-primary">Узнать!</a>
+                </div>
             </div>
         </div>
             </div>
 
         </div>
     </div>
+
 {% endblock %}

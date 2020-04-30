@@ -6,3 +6,30 @@ src:url("../fonts/Firenight-Regular.otf") format("opentype");}
 *{
 font-family: "PT Sans", sans-serif;}
 
+.card-img-top {
+flex: 0 0 auto;
+
+width: 100%;
+heigth: 200px;
+}
+/* 2 колонки на sm */
+@media (min-width: 576px) {
+    .card-columns {
+        -webkit-column-count: 2;
+        column-count: 2
+    }
+}
+/* 3 колонки на md */
+@media (min-width: 768px) {
+    .card-columns {
+        -webkit-column-count: 3;
+        column-count: 3
+    }
+}
+/* 4 колонки на lg и xl */
+@media (min-width: 992px) {
+    .card-columns {
+        -webkit-column-count: 4;
+        column-count: 4
+    }
+}
