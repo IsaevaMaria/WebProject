@@ -48,9 +48,13 @@ def attractions():
     session = db_session.create_session()
     b = session.query(Building).filter(Building.categories_id == 1)
     print(b)
-
     return render_template('attractions.html', title='Достопримечательности Костромы', items=b)
 
+@app.route('/routes')
+def routes():
+    session = db_session.create_session()
+    b = session.query(Routes).all()
+    return render_template('route.html', title='Прогулки по Костроме', items=b)
 
 
 
