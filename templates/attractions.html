@@ -1,5 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
+<!--
+<div id="myModalBox" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Заголовок модального окна</h4>
+      </div>
+
+      <div class="modal-body">
+        {{content}}
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
     <div class="container" style="margin:50px;">
         <div class="row" >
             <div class="card-columns">
@@ -13,12 +35,13 @@
 
                     </div>
             <div class="card-footer">
-            <a href="#" class="card-link" data-toggle="modal" data-target="">Узнать больше</a>
+            <a href="{{url_for('attraction_id', attrac_id=item.id)}}" class="card-link" >Узнать больше</a>
             </div>
             </div>
         {% endfor %}
           </div>
         </div>
     </div>
+
 
 {% endblock %}

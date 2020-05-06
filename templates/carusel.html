@@ -13,12 +13,12 @@
       {% for item in items %}
 
             <div class="carousel-item {% if loop.first %} active {% endif %}">
-                <img src="{{item.image}}" class="d-block w-100" alt="Природа">
+                <img src={{item.image}} class="d-block w-100" alt="">
             </div>>
-            <!--<div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>-->
+      </div>
 
         {% endfor %}
   </div>
