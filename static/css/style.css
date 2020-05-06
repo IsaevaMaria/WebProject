@@ -3,9 +3,72 @@
 font-family: "Firenight-Regular";
 src:url("../fonts/Firenight-Regular.otf") format("opentype");}
 
-*{
-font-family: "PT Sans", sans-serif;}
 
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "PT Sans", sans-serif;
+}
+
+html,
+body {
+	height: 100%;
+}
+/*.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.cont {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+*/
+.my_flex{
+width:100%;
+max-width:960px;
+display:flex;
+
+margin:50 auto;
+background-color:white;
+}
+.first-block{
+background-color:black;
+min-height:430px;
+font-size:40px;
+color:white;
+/*width:60%;*/
+flex:auto;
+justify-content:center;
+align-items:center;
+}
+.container-right{
+background-color:white;
+margin-left:30px;
+min-height:430px;
+/*width:30%;*/
+display:flex;
+flex:0 0 220px;
+flex-direction:column;
+}
+
+.block-items{
+background-color:black;
+min-height:200px;
+font-size:40px;
+color:white;
+/*display:flex;
+justify-content:center;
+align-items:center;
+flex:auto;*/
+margin-bottom:30px;
+
+}
+.block-items:last-child{
+margin-bottom:0px;
+}
 .card-img-top {
 flex: 0 0 auto;
 

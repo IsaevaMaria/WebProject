@@ -1,31 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div id="myModal" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Заголовок модального окна -->
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title">Заголовок модального окна</h4>
-      </div>
-      <!-- Основное содержимое модального окна -->
-      <div class="modal-body">
-        Содержимое модального окна...
-      </div>
-      <!-- Футер модального окна -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Сохранить изменения</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="container-fluid">
-        <div class="row" style="margin-top:50px; margin-left:50px;">
+<div class="container">
+        <div class="row" style="margin:50px; margin-left:50px;">
             <div class="card-deck">
              <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="/static/image/image1.jfif" alt="Card image cap">
@@ -47,7 +23,7 @@
                     </div>
 
                 <div class="card-footer text-muted">
-                        <a href="#" class="btn btn-primary">Смотреть!</a>
+                        <a href="/slider" class="btn btn-primary">Смотреть!</a>
                 </div>
              </div>
              <div class="card" style="width: 18rem;">

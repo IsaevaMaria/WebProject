@@ -10,36 +10,38 @@
     <link rel="stylesheet" href="/static/css/style.css">
     <script>
         (function(){
-  var maxHeight = 0;
-  $('.card').each(function(){
-    if ($(this).height() > maxHeight) {
-      maxHeight = $(this).height();
-    }
-  });
-  $('.card').each(function(){
-    $(this).css('min-height', maxHeight);
-  });
-})();
-
+          var maxHeight = 0;
+            $('.card').each(function(){
+            if ($(this).height() > maxHeight) {
+                    maxHeight = $(this).height();
+            }
+            });
+            $('.card').each(function(){
+                $(this).css('min-height', maxHeight);
+            });
+            })();
     </script>
     <title>{{title}}</title>
 </head>
 <body>
 <header>
-
     <nav  class="navbar navbar-light" style="background-color: #e3f2fd;">
         <a class="navbar-brand" href="#">Моя Кострома</a>
         <button class="btn btn-info d-block ml-auto">Войти</button>
     </nav>
-
 </header>
-<!-- Begin page content -->
-<main role="main" class="container class1">
-    {% block content %}{% endblock %}
-</main>
 
-
-<footer>
-</footer>
+<div class="wrapper">
+    <div class="cont">
+        <main role="main" class="container">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    <footer class="footer">
+        <nav  class="navbar navbar-light nav-fixed-bottom" style="background-color: #e3f2fd;">
+            <a class="navbar-brand" href="#">@YandexLyceum</a>
+        </nav>
+    </footer>
+</div>
 </body>
 </html>
