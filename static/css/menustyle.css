@@ -1,9 +1,0 @@
-﻿@import url('https://fonts.googleapis.com/css?family=PT+Sans');
-@font-face{
-font-family: "Firenight-Regular";
-src:url("../fonts/Firenight-Regular.otf") format("opentype");
-}
-*{
-font-family: "PT Sans", sans-serif;
-line-height:150%;
-}

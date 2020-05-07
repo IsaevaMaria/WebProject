@@ -49,8 +49,8 @@ def main():
 @app.route('/')
 @app.route('/index')
 def index():
-    #dic = cart_museum()
-    return render_template('index.html', title='Мой город - Кострома')
+    dic = cart_museum()
+    return render_template('index.html', title='Мой город - Кострома', items=dic)
 
 @app.route('/attractions')
 def attractions():
