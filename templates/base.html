@@ -7,26 +7,26 @@
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <!--<link href="static/css/style.css" rel="stylesheet">-->
     <script>
         (function(){
-          var maxHeight = 0;
-            $('.card').each(function(){
-            if ($(this).height() > maxHeight) {
-                    maxHeight = $(this).height();
-            }
-            });
-            $('.card').each(function(){
-                $(this).css('min-height', maxHeight);
-            });
-            })();
+  var maxHeight = 0;
+  $('.card').each(function(){
+    if ($(this).height() > maxHeight) {
+      maxHeight = $(this).height();
+    }
+  });
+  $('.card').each(function(){
+    $(this).css('min-height', maxHeight);
+  });
+})();
     </script>
 
     <title>{{title}}</title>
 </head>
-<body>
+<body  style="background-image:url(static/image/pattern.jpg);">
 <header>
-    <nav  class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <nav  class="navbar navbar-light" style="background-color: #e3f2fd; ">
         <a class="navbar-brand" href="#">Моя Кострома</a>
         <button class="btn btn-info d-block ml-auto">Войти</button>
     </nav>

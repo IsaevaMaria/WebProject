@@ -3,34 +3,67 @@ from data import db_session
 from data.building import Building
 from data.categories import Categories
 from data.routes import Routes
+import requests
+import sys
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
+def get_coords(adress):
+    geocoder_request = "http://geocode-maps.yandex.ru/1.x/?apikey=40d1649f-0493-4b70-98ba-98533de7710b&format=json&geocode=" + adress
+    response = requests.get(geocoder_request)
+    if response:
+        json_response = response.json()
+        toponym = json_response["response"]["GeoObjectCollection"]["featureMember"][0]["GeoObject"]
+        toponym_coodrinates = toponym["Point"]["pos"]
+    return toponym_coodrinates
+
+def get_map(params):
+    response = None
+    map_request = "http://static-maps.yandex.ru/1.x/?"
+    #print(map_request)
+    response = requests.get(map_request, params=params)
+    if not response:
+        print("Ошибка выполнения запроса:")
+        print(map_request)
+        print("Http статус:", response.status_code, "(", response.reason, ")")
+        sys.exit(1)
+    return response.content
+
+def cart_museum():
+    session = db_session.create_session()
+    b = session.query(Building).filter(Building.categories_id == 2)
+    sp = [x.adress for x in b]
+    coords = ',  '.join(get_coords("Кострома").split())
+    sp = [','.join(get_coords("Кострома"+x).split()) for x in sp]
+    s = ['pmwts'+str(i + 1)+'~'+x for i, x in enumerate(sp)]
+    s = ''.join(s)
+    d = {'ll': coords, 'l': 'map', 'spn': '0.01,0.01', 'pt': s}
+    return d
+
+
 def main():
     db_session.global_init("db/my_city.sqlite")
-
-
     app.run(port=8080, host='127.0.0.1')
-    #session = db_session.create_session()
-    #user = session.query(Categories).first()
-    #for user in session.query(Building).filter(Building.categories_id == 1):
-     #   print(user.title)
-
-
-
 
 @app.route('/')
 @app.route('/index')
 def index():
+    #dic = cart_museum()
     return render_template('index.html', title='Мой город - Кострома')
-
 
 @app.route('/attractions')
 def attractions():
     session = db_session.create_session()
     b = session.query(Building).filter(Building.categories_id == 1)
     return render_template('attractions.html', title='Достопримечательности Костромы', items=b)
+
+@app.route('/museums')
+def museums():
+    session = db_session.create_session()
+    b = session.query(Building).filter(Building.categories_id == 2)
+    return render_template('museums.html', title='Карта музеев Костромы', items=b)
+
 
 @app.route('/kostroma_routes')
 def routes():
@@ -53,3 +86,4 @@ def attraction_id(attrac_id):
 
 if __name__ == '__main__':
     main()
+
