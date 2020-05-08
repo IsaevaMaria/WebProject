@@ -5,6 +5,7 @@ from data.categories import Categories
 from data.routes import Routes
 import requests
 import sys
+import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -84,6 +85,9 @@ def attraction_id(attrac_id):
     print(b.id)
     return render_template('attracabout.html', title='Прогулки по Костроме', item=b)
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+ #   main()
+
+iport = int(os.environ.get("PORT", 5000))
+app.run(host='0.0.0.0', port=iport)
 
