@@ -50,7 +50,8 @@ def main():
 @app.route('/')
 @app.route('/index')
 def index():
-    dic = cart_museum()
+    #dic = cart_museum()
+    dic={}
     return render_template('index.html', title='Мой город - Кострома', items=dic)
 
 @app.route('/attractions')
