@@ -88,6 +88,7 @@ def attraction_id(attrac_id):
 
 if __name__ == '__main__':
     #main()
+    db_session.global_init("db/my_city.sqlite")
     iport = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=iport)
 
