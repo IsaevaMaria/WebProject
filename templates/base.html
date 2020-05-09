@@ -1,54 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous">
-    <!--<link href="static/css/style.css" rel="stylesheet">-->
-    <script>
-        (function(){
-  var maxHeight = 0;
-  $('.card').each(function(){
-    if ($(this).height() > maxHeight) {
-      maxHeight = $(this).height();
-    }
-  });
-  $('.card').each(function(){
-    $(this).css('min-height', maxHeight);
-  });
-})();
-    </script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+ <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'css/style2.css') }}">
 
-    <title>{{title}}</title>
-</head>
-<body  style="background-image:url(static/image/pattern.jpg);">
-<header>
-    <nav  class="navbar navbar-light" style="background-color: #e3f2fd; ">
-        <a class="navbar-brand" href="#">Моя Кострома</a>
-        <button class="btn btn-info d-block ml-auto">Войти</button>
+        	<title> {{ title }}</title>
+    		</head>
+    		<body>
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal">Мой город - Кострома</h5>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="p-2 text-dark" href="/kostroma_routes">Маршруты</a>
+    <a class="p-2 text-dark" href="/museums">Музеи</a>
+    <a class="p-2 text-dark" href="/attractions">Достопримечательности</a>
+    <a class="p-2 text-dark" href="#">Контакты</a>
+  </nav>
+
+    <nav class="my-2 my-md-0 mr-md-3">
+  <a class="btn btn-outline-dark" href="#">Войти</a>
+    <a class="btn btn-outline-dark" href="#">Зарегистрироваться</a>
     </nav>
-</header>
-
-        <main role="main" class="container">
-            {% block content %}{% endblock %}
-        </main>
-
-    <footer class="footer">
-        <nav  class="navbar navbar-light nav-fixed-bottom" style="background-color: #e3f2fd;">
-            <a class="navbar-brand" href="#">@YandexLyceum</a>
-        </nav>
-    </footer>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<div class="position-relative overflow-hidden p-2 p-md-4 m-md-2 text-center bg-light">
+  <div class="col-md-6 p-lg-6 mx-auto my-6">
+    <!--<h1 class="display-4 font-weight-normal">-->
+        <hr>
+    {% block content %} {% endblock %}<!--</h1>-->
+       <hr>
+  <!--  <a class="btn btn-outline-secondary" href="#">Зарегистрироваться сейчас</a>-->
+  </div>
+</div>
 
-    <!-- Подключаем плагин Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <!-- Подключаем Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" ></script>
-</body>
+		</body>
 </html>

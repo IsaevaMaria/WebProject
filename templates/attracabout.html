@@ -1,19 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-        <div class="row" style="margin:50px; margin-left:50px;">
-             <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
-                    <div class="card-body">
-                    <h5 class="card-title">{{item.title}}</h5>
-                    <p class="card-text">{{item.content}}</p>
-
-                    </div>
-                 <div class="card-footer text-muted">
-                        <a href="/attractions" class="btn btn-primary" >Закрыть</a>
-                </div>
-            </div>
-
-          </div>
-        </div>
-{%endblock%}
+<div class="container-fluid">
+    <img src="{{item.image}}" alt="Card image cap">
+    <h3>{{item.title}}</h3>
+    <p>{{item.content}}</p>
+    <h5>{{item.adress}}</h5>
+    <a href="/attractions" class="btn btn-outline-dark" >Назад</a>
+</div>
+ {%endblock%}

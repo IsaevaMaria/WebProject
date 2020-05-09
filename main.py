@@ -87,7 +87,7 @@ def attraction_id(attrac_id):
     return render_template('attracabout.html', title='Прогулки по Костроме', item=b)
 
 if __name__ == '__main__':
-    #main()
-    iport = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=iport)
+    main()
+    #iport = int(os.environ.get("PORT", 5000))
+    #app.run(host='0.0.0.0', port=iport)
 
