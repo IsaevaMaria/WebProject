@@ -44,7 +44,6 @@ def get_coords(adress):
 def get_map(params):
     response = None
     map_request = "http://static-maps.yandex.ru/1.x/?"
-    #print(map_request)
     response = req.get(map_request, params=params)
     if not response:
         print("Ошибка выполнения запроса:")
@@ -207,8 +206,8 @@ def main():
     app.run(port=8080, host='127.0.0.1')
 
 if __name__ == '__main__':
-    main()
-    #db_session.global_init("db/my_city.sqlite")
-    #iport = int(os.environ.get("PORT", 5000))
-    #app.run(host='0.0.0.0', port=iport)
+    #main()
+    db_session.global_init("db/my_city.sqlite")
+    iport = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=iport)
 
