@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+{% if current_user.email == 'admin@mail.ru' %}
+<a href="/add_building" class="btn btn-outline-dark">
+        Добавить объект
+</a>
+{%else%}
+<h2> {{current_user.name}}</h2>
+{%endif%}
+{% endblock %}

@@ -17,7 +17,7 @@
             <div class="card-footer">
             <!--<a href="{{url_for('attraction_id', attrac_id=item.id)}}" class="card-link" >Узнать больше</a>-->
 
-               <a href="#" target="_blank"  class="card-link">На карте...</a>
+               <a href="{{url_for('museum_id', attrac_id=item.id)}}"  class="card-link">Узнать больше</a>
             </div>
             </div>
         {% endfor %}

@@ -5,7 +5,9 @@
     <h3>{{item.title}}</h3>
     <p>{{item.content}}</p>
     <h5>{{item.adress}}</h5>
-    <a href="/attractions" class="btn btn-outline-dark" >Назад</a>
+    <a href="/museums" class="btn btn-outline-dark" >Назад</a>
+    <a href="https://yandex.ru/maps/?ll={{dic.ll}}&pt={{dic.pt}}&spn={{dic.spn}}&l=map" target="_blank" class="btn btn-outline-dark">На карте</a>
+
     {% if current_user.is_authenticated %}
         <a href="{{url_for('add_favourites', my_id=item.id)}}" class="btn btn-outline-dark">
         <img src="/static/image/icon.png" alt="">

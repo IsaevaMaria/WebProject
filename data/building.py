@@ -20,3 +20,4 @@ class Building(SqlAlchemyBase):
                                       sqlalchemy.ForeignKey("routes.id"))
     categories = orm.relation('Categories')
     routes = orm.relation('Routes')
+    users = orm.relation("User",secondary="association", backref="user")
