@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField, SelectField
-#from wtforms import FileField
-from flask_wtf.file import FileField, FileRequired, FileAllowed
+from wtforms import FileField
+from flask_wtf.file import FileRequired, FileAllowed
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired
 
@@ -22,7 +22,10 @@ class AddBuilding(FlaskForm):
     title = StringField('Название объекта', validators=[DataRequired()])
     content = TextAreaField("Описание", validators=[DataRequired()])
     adress = StringField("Адрес объекта")
-    image = FileField("Прикрепите картинку") #, validators=[FileRequired(), FileAllowed(['jpg', 'png', 'jfif'], 'Images only!')])
+    image = FileField(
+        "Фотография",
+        validators=[FileAllowed(['jpg', 'png', 'jpeg'],
+                                "Файл должен быть одного из этих форматов: 'jpg', 'png', 'jpeg'")])
     category = SelectField('Название категории', choices=[
     	("Музеи", "Музеи"),
     	("Достопримечательности", "Достопримечательности")])

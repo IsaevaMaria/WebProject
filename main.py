@@ -179,16 +179,12 @@ def add_news():
         b.title = form.title.data
         b.content = form.content.data
         b.adress = form.adress.data
-        #filename = secure_filename(form.image.file.filename)
-        #file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        #form.image.file.save(file_path)
-        b.image = ''
-        #file = form.file
-        #if file and allowed_file(file.filename):
-         #   print(1)
-          #  filename = secure_filename(file.filename)
-           # print(filename)
-            #filename.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        if form.image.data:  # Если получена фотография.
+            filename = form.image.data.filename  # Получение имени.
+            form.image.data.save(
+                "static/image/" + filename.split("/")[-1])
+
+        b.image = "static/image/" + form.image.data.filename.split("/")[-1] if form.image.data else ""
         n = form.category.data
         tmp =  session.query(Categories).filter(Categories.name == n).first()
         b.categories_id = tmp.id
@@ -197,7 +193,7 @@ def add_news():
         b.routes_id = tmp.id
         session.add(b)
         session.commit()
-        return redirect('/add.html')
+        return redirect('/')
     return render_template('add.html', title='Добавление объекта',
                            form=form)
 
